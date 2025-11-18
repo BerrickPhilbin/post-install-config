@@ -2,141 +2,177 @@
   <img src="https://i.imgur.com/Clzj7Xs.png" alt="osTicket logo" />
 </p>
 
-# osTicket — Post-Install Configuration
+<h1>osTicket — Post-Install Configuration</h1>
 
-This repository documents the **post-install configuration steps** I performed for osTicket (Windows 10 / IIS environment).  
-Each step includes a placeholder for a screenshot — replace the Imgur link with your uploaded image.
+This repository documents the **post-install configuration steps** I performed for osTicket (Windows 10 / IIS environment).
 
 ---
 
-## Environments & Technologies Used
-- Microsoft Azure (Virtual Machines / Compute)
-- Remote Desktop (RDP)
+<h2>🧰 Environments and Technologies Used</h2>
+
+- Microsoft Azure (Virtual Machines)  
+- <b>Windows 10 Pro (21H2)
+- Remote Desktop Protocol (RDP)
 - Internet Information Services (IIS)
-- PHP, MySQL/MariaDB (as used by osTicket)
-
-## Operating System
-- **Windows 10 (21H2)**
+- PHP 7.3.8
+- MySQL 5.5.62
+- HeidiSQL  
 
 ---
 
-## Post-Install Configuration Objectives
+<h2>🎯 Post-Install Configuration Objectives</h2>
+
 - Configure roles, departments, teams, agents, and users  
 - Enforce registration requirements & user visibility  
 - Configure SLAs, help topics, and basic security/hardening  
-- Provide screenshot placeholders for documentation
+- Provide screenshot placeholders for documentation  
 
 ---
 
-### 1) Configure Agents (workers)
+<h2>📝 Step 1: Configure Agents (Workers)</h2>
+
 **Path:** `Admin Panel -> Agents -> Add New`  
-**Action taken:** Created agents:  
+
+**Action Taken:**  
+Created agents:  
 - **Jane** — Department: SysAdmins  
-- **John** — Department: Support
+- **John** — Department: Support  
 
-**Notes / Why:** Add agents and assign to departments for ticket handling and notifications.
+**Notes / Why:**  
+Add agents and assign them to departments for ticket handling and notifications.
 
 <p align="center">
-<img src="https://i.imgur.com/M4MUWev.png" alt="Prerequisite Files" width="80%"/>
+<img src="https://i.imgur.com/M4MUWev.png" alt="Configure Agents" width="80%"/>
 </p>
 
 ---
 
-### 2) Configure Roles (for grouping permissions)
+<h2>📝 Step 2: Configure Roles (Permissions Grouping)</h2>
+
 **Path:** `Admin Panel -> Agents -> Roles`  
-**Action taken:** Created role **Supreme Admin**.
 
-**Notes / Why:** Use roles to group and manage permission sets for agents.
+**Action Taken:**  
+Created role **Supreme Admin**.
+
+**Notes / Why:**  
+Use roles to group and manage permission sets for agents.
 
 <p align="center">
-<img src="https://i.imgur.com/fz5HIf7.png" alt="Prerequisite Files" width="80%"/>
+<img src="https://i.imgur.com/fz5HIf7.png" alt="Configure Roles" width="80%"/>
 </p>
 
 ---
 
-### 3) Configure Departments (Ticket Visibility: Help Desk vs SysAdmins vs Networking)
+<h2>📝 Step 3: Configure Departments</h2>
+
 **Path:** `Admin Panel -> Agents -> Departments`  
-**Action taken:** Created department **SysAdmins**.
 
-**Notes / Why:** Departments control ticket visibility and routing to the correct teams.
+**Action Taken:**  
+Created department **SysAdmins**.
+
+**Notes / Why:**  
+Departments control ticket visibility and route tickets to the correct teams (Help Desk vs SysAdmins vs Networking).
 
 <p align="center">
-<img src="https://i.imgur.com/db2Fdyv.png" alt="Prerequisite Files" width="80%"/>
+<img src="https://i.imgur.com/db2Fdyv.png" alt="Configure Departments" width="80%"/>
 </p>
 
 ---
 
-### 4) Configure Teams
+<h2>📝 Step 4: Configure Teams</h2>
+
 **Path:** `Admin Panel -> Agents -> Teams`  
-**Action taken:** Created team **Online Banking** (pulled agents from different departments).
 
-**Notes / Why:** Teams allow cross-department collaboration and shared queues.
+**Action Taken:**  
+Created team **Online Banking** (includes members from multiple departments).
+
+**Notes / Why:**  
+Teams allow cross-department collaboration and shared ticket queues.
 
 <p align="center">
-<img src="https://i.imgur.com/g7A5H9n.png" alt="Prerequisite Files" width="80%"/>
+<img src="https://i.imgur.com/g7A5H9n.png" alt="Configure Teams" width="80%"/>
 </p>
 
 ---
 
-### 5) Allow anyone to create tickets (Registration settings)
+<h2>📝 Step 5: Set User Registration Requirements</h2>
+
 **Path:** `Admin Panel -> Settings -> User Settings`  
-**Action taken:** **UN-CHECKED** “Unregistered users can create tickets” → Enabled **Registration Required** (users must register/login to create tickets).
 
-**Notes / Why:** Making sure to uncheck the box makes sure the server doesn't Force authenticated submissions, and improves accountability & control.
+**Action Taken:**  
+**UN-CHECKED** “Unregistered users can create tickets” → Enabled **Registration Required**.
+
+**Notes / Why:**  
+Enforcing registration prevents anonymous submissions and improves accountability.
 
 ---
 
+<h2>📝 Step 6: Configure Users (Customers)</h2>
 
-### 6) Configure Users (customers)
 **Path:** `Agent Panel -> Users -> Add New`  
-**Action taken:** Created users:  
-- **Karen**  
 
-**Notes / Why:** Create test or seed user accounts to validate registration, login, and ticket creation workflows.
+**Action Taken:**  
+Created user:  
+- **Karen**
+
+**Notes / Why:**  
+Create test/seed user accounts to validate registration, login, and ticket creation workflows.
 
 <p align="center">
-<img src="https://i.imgur.com/qifSDlQ.png" alt="Prerequisite Files" width="80%"/>
+<img src="https://i.imgur.com/qifSDlQ.png" alt="Configure Users" width="80%"/>
 </p>
 
 ---
 
-### 7) Configure SLA
+<h2>📝 Step 7: Configure SLAs</h2>
+
 **Path:** `Admin Panel -> Manage -> SLA`  
-**Action taken:** Created SLAs:  
-- **Sev-A** — Grace Period: 1 hour, Schedule: 24/7  
-- **Sev-B** — Grace Period: 4 hours, Schedule: 24/7  
-- **Sev-C** — Grace Period: 8 hours, Schedule: Business Hours
 
-**Notes / Why:** Define response/resolve expectations and escalation rules.
+**Action Taken:**  
+Created SLAs:
+- **Sev-A** — Grace: 1 hour, Schedule: 24/7  
+- **Sev-B** — Grace: 4 hours, Schedule: 24/7  
+- **Sev-C** — Grace: 8 hours, Schedule: Business Hours  
+
+**Notes / Why:**  
+SLAs define expected response/resolve windows and escalation policies.
 
 <p align="center">
-<img src="https://i.imgur.com/tzpW0Mv.png" alt="Prerequisite Files" width="80%"/>
+<img src="https://i.imgur.com/tzpW0Mv.png" alt="Configure SLA" width="80%"/>
 </p>
 
 ---
 
-### 8) Configure Help Topics (for the ticket submission form)
+<h2>📝 Step 8: Configure Help Topics</h2>
+
 **Path:** `Admin Panel -> Manage -> Help Topics`  
-**Action taken:** Created topics:  
+
+**Action Taken:**  
+Created topics:
 - Business Critical Outage  
 - Personal Computer Issues  
 - Equipment Request  
 - Password Reset  
-- Other
+- Other  
 
-**Notes / Why:** Help Topics present user-facing categories on the ticket form and can be used for routing and automations.
+**Notes / Why:**  
+Help Topics categorize incoming tickets and can trigger routing rules and automation.
 
 <p align="center">
-<img src="https://i.imgur.com/oDueYaG.png" alt="Prerequisite Files" width="80%"/>
+<img src="https://i.imgur.com/oDueYaG.png" alt="Help Topics" width="80%"/>
 </p>
-
 
 ---
 
-## Troubleshooting tips
-- **User can’t create ticket:** Confirm **Registration Required** setting and user account status.  
-- **Agent missing permissions:** Review Roles → Permissions and Department membership.  
-- **SLA not applied:** Confirm ticket’s assigned help-topic/priority and SLA mapping rules.  
-- **No notification/email:** Check Email settings (SMTP), test sending, and review mail logs.
+<h2>🛠 Troubleshooting Tips</h2>
 
-here is the link to the next set of steps -> [osTicket: Ticket Lifecycle Examples](https://github.com/BerrickPhilbin/ticket-lifecycle)
+- **User can’t create ticket:** Confirm "Registration Required" and user account status.  
+- **Agent missing permissions:** Check Roles → Permissions and Department assignments.  
+- **SLA not applied:** Verify help topic → priority → SLA rule mappings.  
+- **Email/notification issues:** Review SMTP settings, test sending, and check mail logs.  
+
+---
+
+Here is the link to the next set of steps →  
+👉 **[osTicket: Ticket Lifecycle Examples](https://github.com/BerrickPhilbin/ticket-lifecycle)**
+
