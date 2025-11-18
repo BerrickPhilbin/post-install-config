@@ -28,55 +28,7 @@ Each step includes a placeholder for a screenshot — replace the Imgur link wit
 
 ---
 
-### 1) Configure Roles (for grouping permissions)
-**Path:** `Admin Panel -> Agents -> Roles`  
-**Action taken:** Created role **Supreme Admin**.
-
-**Notes / Why:** Use roles to group and manage permission sets for agents.
-
-**Imgur (step 1):**  
-`https://imgur.com/your-image-here`  
-`![Configure Roles](https://imgur.com/your-image-here)`
-
----
-
-### 2) Configure Departments (Ticket Visibility: Help Desk vs SysAdmins vs Networking)
-**Path:** `Admin Panel -> Agents -> Departments`  
-**Action taken:** Created department **SysAdmins**.
-
-**Notes / Why:** Departments control ticket visibility and routing to the correct teams.
-
-**Imgur (step 2):**  
-`https://imgur.com/your-image-here`  
-`![Configure Departments](https://imgur.com/your-image-here)`
-
----
-
-### 3) Configure Teams
-**Path:** `Admin Panel -> Agents -> Teams`  
-**Action taken:** Created team **Online Banking** (pulls agents from different departments).
-
-**Notes / Why:** Teams allow cross-department collaboration and shared queues.
-
-**Imgur (step 3):**  
-`https://imgur.com/your-image-here`  
-`![Configure Teams](https://imgur.com/your-image-here)`
-
----
-
-### 4) Allow anyone to create tickets (Registration settings)
-**Path:** `Admin Panel -> Settings -> User Settings`  
-**Action taken:** **UN-CHECKED** “Unregistered users can create tickets” → Enabled **Registration Required** (users must register/login to create tickets).
-
-**Notes / Why:** Forces authenticated submissions, improves accountability & control.
-
-**Imgur (step 4):**  
-`https://imgur.com/your-image-here`  
-`![User Settings - Registration](https://imgur.com/your-image-here)`
-
----
-
-### 5) Configure Agents (workers)
+### 1) Configure Agents (workers)
 **Path:** `Admin Panel -> Agents -> Add New`  
 **Action taken:** Created agents:  
 - **Jane** — Department: SysAdmins  
@@ -84,23 +36,67 @@ Each step includes a placeholder for a screenshot — replace the Imgur link wit
 
 **Notes / Why:** Add agents and assign to departments for ticket handling and notifications.
 
-**Imgur (step 5):**  
-`https://imgur.com/your-image-here`  
-`![Configure Agents](https://imgur.com/your-image-here)`
+<p align="center">
+<img src="https://i.imgur.com/M4MUWev.png" alt="Prerequisite Files" width="80%"/>
+</p>
 
 ---
+
+### 2) Configure Roles (for grouping permissions)
+**Path:** `Admin Panel -> Agents -> Roles`  
+**Action taken:** Created role **Supreme Admin**.
+
+**Notes / Why:** Use roles to group and manage permission sets for agents.
+
+<p align="center">
+<img src="https://i.imgur.com/fz5HIf7.png" alt="Prerequisite Files" width="80%"/>
+</p>
+
+---
+
+### 3) Configure Departments (Ticket Visibility: Help Desk vs SysAdmins vs Networking)
+**Path:** `Admin Panel -> Agents -> Departments`  
+**Action taken:** Created department **SysAdmins**.
+
+**Notes / Why:** Departments control ticket visibility and routing to the correct teams.
+
+<p align="center">
+<img src="https://i.imgur.com/db2Fdyv.png" alt="Prerequisite Files" width="80%"/>
+</p>
+
+---
+
+### 4) Configure Teams
+**Path:** `Admin Panel -> Agents -> Teams`  
+**Action taken:** Created team **Online Banking** (pulled agents from different departments).
+
+**Notes / Why:** Teams allow cross-department collaboration and shared queues.
+
+<p align="center">
+<img src="https://i.imgur.com/g7A5H9n.png" alt="Prerequisite Files" width="80%"/>
+</p>
+
+---
+
+### 5) Allow anyone to create tickets (Registration settings)
+**Path:** `Admin Panel -> Settings -> User Settings`  
+**Action taken:** **UN-CHECKED** “Unregistered users can create tickets” → Enabled **Registration Required** (users must register/login to create tickets).
+
+**Notes / Why:** Making sure to uncheck the box makes sure the server doesn't Force authenticated submissions, and improves accountability & control.
+
+---
+
 
 ### 6) Configure Users (customers)
 **Path:** `Agent Panel -> Users -> Add New`  
 **Action taken:** Created users:  
 - **Karen**  
-- **Ken**
 
 **Notes / Why:** Create test or seed user accounts to validate registration, login, and ticket creation workflows.
 
-**Imgur (step 6):**  
-`https://imgur.com/your-image-here`  
-`![Configure Users](https://imgur.com/your-image-here)`
+<p align="center">
+<img src="https://i.imgur.com/qifSDlQ.png" alt="Prerequisite Files" width="80%"/>
+</p>
 
 ---
 
@@ -113,9 +109,9 @@ Each step includes a placeholder for a screenshot — replace the Imgur link wit
 
 **Notes / Why:** Define response/resolve expectations and escalation rules.
 
-**Imgur (step 7):**  
-`https://imgur.com/your-image-here`  
-`![Configure SLA](https://imgur.com/your-image-here)`
+<p align="center">
+<img src="https://i.imgur.com/tzpW0Mv.png" alt="Prerequisite Files" width="80%"/>
+</p>
 
 ---
 
@@ -130,9 +126,10 @@ Each step includes a placeholder for a screenshot — replace the Imgur link wit
 
 **Notes / Why:** Help Topics present user-facing categories on the ticket form and can be used for routing and automations.
 
-**Imgur (step 8):**  
-`https://imgur.com/your-image-here`  
-`![Configure Help Topics](https://imgur.com/your-image-here)`
+<p align="center">
+<img src="https://i.imgur.com/oDueYaG.png" alt="Prerequisite Files" width="80%"/>
+</p>
+
 
 ---
 
@@ -141,22 +138,3 @@ Each step includes a placeholder for a screenshot — replace the Imgur link wit
 - **Agent missing permissions:** Review Roles → Permissions and Department membership.  
 - **SLA not applied:** Confirm ticket’s assigned help-topic/priority and SLA mapping rules.  
 - **No notification/email:** Check Email settings (SMTP), test sending, and review mail logs.
-
----
-
-## Files & Notes
-- Use `/images` for local screenshots, or host screenshots on Imgur and paste links into each `![alt](link)` slot above.  
-- Convert any `https://imgur.com/your-image-here` placeholders to real Imgur direct-image links (for better embedding use `i.imgur.com/xxxxx.png` or the Markdown shown above).  
-- Consider adding `.gitignore` to exclude local screenshot files if you prefer Imgur hosting.
-
----
-
-## Next steps I can do for you
-- Convert this README to HTML if you prefer the original HTML style.  
-- Populate the README in your repo/canvas for you.  
-- Create a `troubleshooting.md` or `CONTRIBUTING.md` file from the notes.
-
----
-
-**Author / Maintainer:** _Your Name Here_  
-**License:** MIT (suggested)  
