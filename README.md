@@ -13,11 +13,7 @@ This repository documents the **post-install configuration steps** I performed f
 - Microsoft Azure (Virtual Machines)  
 - <b>Windows 10 Pro (21H2)
 - Remote Desktop Protocol (RDP)
-- Internet Information Services (IIS)
-- PHP 7.3.8
-- MySQL 5.5.62
-- HeidiSQL  
-
+  
 ---
 
 <h2>🎯 Post-Install Configuration Objectives</h2>
