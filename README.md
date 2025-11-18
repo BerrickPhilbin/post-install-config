@@ -138,3 +138,5 @@ Each step includes a placeholder for a screenshot — replace the Imgur link wit
 - **Agent missing permissions:** Review Roles → Permissions and Department membership.  
 - **SLA not applied:** Confirm ticket’s assigned help-topic/priority and SLA mapping rules.  
 - **No notification/email:** Check Email settings (SMTP), test sending, and review mail logs.
+
+here is the link to the next set of steps -> [osTicket: Ticket Lifecycle Examples](https://github.com/BerrickPhilbin/ticket-lifecycle)
