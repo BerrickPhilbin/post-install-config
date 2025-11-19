@@ -70,7 +70,7 @@ Created department **SysAdmins**.
 Departments control ticket visibility and route tickets to the correct teams (Help Desk vs SysAdmins vs Networking).
 
 <p align="center">
-<img src="https://i.imgur.com/db2Fdyv.png" alt="Configure Departments" width="80%"/>
+<img src="https://i.imgur.com/0N5CrHo.png" alt="Configure Departments" width="80%"/>
 </p>
 
 ---
